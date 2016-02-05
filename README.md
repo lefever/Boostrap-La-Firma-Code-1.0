@@ -4,7 +4,7 @@ Este es un Framework basado en Twitter Bootstrap, que contiene snippets y archiv
 
 ##CSS
 
-[/css/style.css]
+/css/style.css
 Este archivo contiene el CSS general. Escribir en el todo el estilo del sitio
 
 /css/demo.css
