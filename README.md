@@ -2,22 +2,31 @@
 
 Este es un Framework basado en Twitter Bootstrap, que contiene snippets y archivos para facilitar el desarrollo de landings, formularios y usos varios.
 
-##CSS
+Puedes ver la documentación en: http://www.dgtl.cl/bootstrap/beta-0.1/
 
-/css/style.css
-Este archivo contiene el CSS general. Escribir en el todo el estilo del sitio
-
-/css/demo.css
-Este archivo contiene el CSS extra para este demo
-
-/css/snippets.css
-Este archivo contiene snippets y helpers CSS.
-
-/css/screen-small.css
-Este archivo contiene el CSS para pantallas menores a 991px (al igual que boostrap bajo esta medida se ejecuta el primer query para pantallas pequeñas)
-
-/css/screen-extra-small.css
-Este archivo contiene el CSS para pantallas menores a 768px (segundo query para pantallas más pequeñas)
-
-/css/devices-320-480.css
-Este archivo contiene el CSS para pantallas menores a 480px y 320px, generalmente dispositivos más antiguos con pantallas de 4.3"
+####Archivos incluidos en el master:
+├── css/
+│   └── bootstrap.css
+│   └── bootstrap.css.map
+│   └── bootstrap-theme.min.css
+│   └── bootstrap-theme.min.css.map
+│   └── demo.css
+│   └── devices-320-480.css
+│   └── screen-extra-small.css
+│   └── screen-small.css
+│   └── snippets.css
+│   └── style.css
+├── fonts/
+│   └── glyphicons-halflings-regular.eot
+│   └── glyphicons-halflings-regular.svg
+│   └── glyphicons-halflings-regular.ttf
+│   └── glyphicons-halflings-regular.woff
+│   └── glyphicons-halflings-regular.woff2
+├── img/
+│   └── logo.png
+├── js/
+│   └── bootstrap.min.js
+│   └── jquery.Rut.js
+│   └── main.js
+│   └── validator.js
+└── index.html
