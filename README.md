@@ -6,6 +6,7 @@ Puedes ver la documentación en: http://www.dgtl.cl/bootstrap/beta-0.1/
 
 ####Archivos incluidos en el master:
 ├── css/
+
 │   └── bootstrap.css
 
 │   └── bootstrap.css.map
@@ -45,6 +46,7 @@ Puedes ver la documentación en: http://www.dgtl.cl/bootstrap/beta-0.1/
 ├── js/
 
 │   └── bootstrap.min.js
+
 │   └── angular.min.js
 
 │   └── jquery.Rut.js
