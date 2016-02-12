@@ -10,15 +10,14 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
     <link href="css/snippets.css" rel="stylesheet">
     <link href="css/screen-small.css" rel="stylesheet">
     <link href="css/screen-extra-small.css" rel="stylesheet">
     <link href="css/devices-320-480.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,7 +27,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" data-toggle="fixed-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -59,6 +58,24 @@
                 <li><a href="#validacion">Validación</a></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bootstrap Docs<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                	<a href="http://getbootstrap.com/getting-started/" target="_blank">Getting Started</a>
+                </li>
+                <li class="dropdown-submenu">
+                	<a href="http://getbootstrap.com/css/" target="_blank">CSS</a>
+                </li>
+                <li class="dropdown-submenu">
+                	<a href="http://getbootstrap.com/components/" target="_blank">Components</a>
+                </li>
+                <li class="dropdown-submenu">
+                	<a href="http://getbootstrap.com/javascript/" target="_blank">Javascript</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="">Github</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -69,33 +86,77 @@
       <h3>Este Boostrap tiene funciones adicionales, como validación de formularios (incluido RUT), snippets especiales y más cosas que se detallan en este documento. Las referencias para este framework se pueden encontrar en el <a href="http://getbootstrap.com/" target="_blank">sitio oficial de Boostrap</a></h3> 
       <a href="https://github.com/lefever/Boostrap-La-Firma-Code-1.0" target="_blank"><button class="btn btn-lg btn-primary">Ver en Github</button></a>
 
+      <section id="opciones">
+      	<h2>Opciones</h2>
+  		<p>Las opciones del Framework se activan desde el archivo /js/options.js y son las siguientes:</p>
+        <div class="bs-example">
+	  		<table class="table table-bordered">
+	  			<tr class="head">
+	  				<td>Opción</td>
+	  				<td>Valor</td>
+	  				<td>Descripción</td>
+	  			</tr>
+	  			<tr>
+	  				<td>animaciones</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva animate.css. <a href="https://daneden.github.io/animate.css/" target="_blank">Ver documentación.</a></td>
+	  			</tr>
+	  			<tr>
+	  				<td>validar_formularios</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva la validación de formularios. <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Ver documentación.</a></td>
+	  			</tr>
+	  			<tr>
+	  				<td>validar_rut</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva la validación de rut en los formularios. <a href="http://joaquinnunez.cl/jQueryRutPlugin/" target="_blank">Ver documentación.</a></td>
+	  			</tr>
+	  			<tr>
+	  				<td>limpiar_rut</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva el formato de rut sin puntos ni guiones. <i>Ej: 123456789.</i></td>
+	  			</tr>
+	  			<tr>
+	  				<td>angular_js</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva Angular.js. <a href="https://angularjs.org/" target="_blank">Ver documentación.</a></td>
+	  			</tr>
+	  			<tr>
+	  				<td>fixed_navbar</td>
+	  				<td>1 / 0</td>
+	  				<td>Activa/desactiva la barra de navegación al hacer scroll. Esto se aplica a la barra de navegación <code><span><</span>nav data-toggle="fixed-nav"><span><</span>/nav></td>
+	  			</tr>
+	  		</table>
+  		</div>
+      </section>
+
       <section id="css"><h2>CSS</h2>
         <h4>En el directorio <strong>/css</strong> existen hojas de estilo creadas para una mejor organización del código que se detallan a continuación:</h4>
         <div class="bs-example">
           <ul>
             <li>
-              <h4>/css/style.css</h4>
+              <h4><code>/css/style.css</code></h4>
               <p>Este archivo contiene el CSS general. Escribir en el todo el estilo del sitio</p>    
             </li>
             <li>
-              <h4>/css/demo.css</h4>
+              <h4><code>/css/demo.css</code></h4>
               <p>Este archivo contiene el CSS extra para este demo</p>    
             </li>
             <li>
-              <h4>/css/snippets.css</h4>
+              <h4><code>/css/snippets.css</code></h4>
               <p>Este archivo contiene snippets y helpers CSS.</p>
               <a href="#snippets"><button class="btn btn-primary">Ver detalle</button></a>   
             </li>
             <li>
-              <h4>/css/screen-small.css</h4>
+              <h4><code>/css/screen-small.css</code></h4>
               <p>Este archivo contiene el CSS para pantallas menores a 991px (al igual que boostrap bajo esta medida se ejecuta el primer query para pantallas pequeñas)</p>
             </li>
             <li>
-              <h4>/css/screen-extra-small.css</h4>
+              <h4><code>/css/screen-extra-small.css</code></h4>
               <p>Este archivo contiene el CSS para pantallas menores a 768px (segundo query para pantallas más pequeñas)</p>    
             </li>
             <li>
-              <h4>/css/devices-320-480.css</h4>
+              <h4><code>/css/devices-320-480.css</code></h4>
               <p>Este archivo contiene el CSS para pantallas menores a 480px y 320px, generalmente dispositivos más antiguos con pantallas de 4.3"</p>
             </li>
           </ul>
@@ -108,21 +169,21 @@
         <div class="bs-example">
           <ul>
             <li>
-              <h4>.bg-cover</h4>
-              <p>Esta clase aplica <strong>background-size:cover;</strong></p>
+              <h4><code>.bg-cover</code></h4>
+              <p>Esta clase aplica <code><strong>background-size:cover;</strong></code></p>
             </li>
             <li>
-              <h4>.bg-contain</h4>
-              <p>Esta clase aplica <strong>background-size:contain;</strong></p>
+              <h4><code>.bg-contain</code></h4>
+              <p>Esta clase aplica <code><strong>background-size:contain;</strong></code></p>
             </li>
             <li>
               <h4>Bullets de lista personalizados</h4>
-              <p>Para crear una lista con bullets personalizados se debe agregar la clase <strong>.li-custom</strong> al tag <strong>&lt;ul></strong></p>
+              <p>Para crear una lista con bullets personalizados se debe agregar la clase <code><strong>.li-custom</strong></code> al tag <code><strong>&lt;ul></strong></code></p>
               <div class="code">
-                &lt;ul class="li-custom star1"><br>
+                <code>&lt;ul class="li-custom star1"><br>
                 <span class="margin"></span>&lt;li>Listado con bullet de estrella&lt;/li><br>
                 <span class="margin"></span>&lt;li>Otro elemento&lt;/li><br>
-                &lt;/ul>
+                &lt;/ul></code>
                 <div class="result">
                   <ul class="li-custom star1">
                     <li>Listado con bullet de estrella</li>
@@ -240,45 +301,22 @@
         <div class="bs-example">
           <ul>
             <li>
-              <h4>/js/main.js</h4>
-              <p>Script general del framework. Contiene algunas funciones precargadas.</p>
-              <a href="#main-js"><button class="btn btn-primary">Ver detalle</button></a>   
+              <h4><code>/js/main.js</code></h4>
+              <p>Script del framework que contiene las funciones del framework.</p>
             </li>
             <li>
-              <h4>/js/validator.js</h4>
+              <h4><code>/js/validator.js</code></h4>
               <p>Script para validación de los formularios nativos de Bootstrap.</p>
               <a href="#validacion"><button class="btn btn-primary">Ver detalle</button></a>   
             </li>
             <li>
-              <h4>/js/jquery.Rut.js</h4>
+              <h4><code>/js/jquery.Rut.js</code></h4>
               <p>Script para validación y formateo de RUT.</p>
               <a href="#validacion"><button class="btn btn-primary">Ver detalle</button></a>   
             </li>
           </ul>
         </div>       
       </section>
-
-      <section id="main-js">
-        <h2>main.js</h2>
-        <h4>Detalle del script</h4>
-        <div class="bs-example">
-          <ul>
-            <li>
-              <h4>$(document).ready()</h4>
-              <p>Lanza la función cuando el documento está listo</p>
-            </li>
-            <li>
-              <h4>$(window).load()</h4>
-              <p>Lanza la función luego de cargar todas las fuentes</p>
-            </li>
-            <li>
-              <h4>$(window).resize()</h4>
-              <p>Lanza la functión cuando la ventana es redimensionada</p>
-            </li>
-          </ul>
-        </div>        
-      </section>
-
 
       <section id="validacion">
         <h2>Validación</h2>
@@ -287,18 +325,18 @@
           <ul>
             <li>
               <h4>/js/validator.js <small>v0.9.0</small></h4>
-              <p>Plugin para validar campos de Boostrap. Para validar simplemente añadir a la etiqueta <strong>&lt;form&gt;</strong> el id 'formulario'.</p>
+              <p>Plugin para validar campos de Boostrap. Para validar simplemente añadir a la etiqueta <code><strong>&lt;form&gt;</strong></code> el atributo <code><strong>data-toggle="validator"</strong></code>.</p>
               <div class="code">
-                &lt;form id="formulario"&gt;&lt;/form&gt;            
+                <code><strong>&lt;form id="formulario"&gt;&lt;/form&gt;</strong></code>     
               </div>
             </li>
             <li>
               <h4>/js/jquery.Rut.js <small>v0.5</small></h4>
-              <p>Plugin para validar y formatear RUT. Para validar un rut simplemente añadir a la etiqueta <strong>&lt;input&gt;</strong> el id 'rut'.</p>
+              <p>Plugin para validar y formatear RUT. Para validar un rut simplemente añadir a la etiqueta <code><strong>&lt;input&gt;</strong></code> el id 'rut'.</p>
               <div class="code">
-                &lt;input id="rut"&gt;&lt;/input&gt;
+                <code><strong>&lt;input id="rut"&gt;&lt;/input&gt;</strong></code>
               </div>
-              <p>Al dar error se creará un alert que mostrará 'Rut incorrecto'. Esto se puede modificar desde el archivo <strong>/js/main.js</strong></p>
+              <p>Al dar error se creará un alert que mostrará 'Rut incorrecto'. Esto se puede modificar desde el archivo <code><strong>/js/main.js</strong></code></p>
             </li>
           </ul>
         </div>        
@@ -310,15 +348,17 @@
       <p>Bootstrap La Firma Code Beta 0.1 &copy;2016</p>
     </footer>
 
+    <form data-toggle="validator">
+    	
+
+    </form>
+
     <!-- Modales -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.js"></script>
-    <script src="js/angular.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/validator.js"></script>
-    <script src="js/jquery.Rut.js"></script>
+    <script src="js/options.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Analytics -->

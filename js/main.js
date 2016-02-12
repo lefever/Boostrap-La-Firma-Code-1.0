@@ -1,45 +1,72 @@
+/* Copyright (c) 2016 Tomás Lefever (hola@tomaslefever.cl) http://www.tomaslefever.cl
+ * Licensed under GPL (http://www.opensource.org/licenses/gpl-2.0.php)
+ * Use only for non-commercial usage.
+ *
+ * Version : 0.1
+ */
+
+// Función para añadir scripts al header
+function appendScript(pathToScript) {
+    var head = document.getElementsByTagName("head")[0];
+    var js = document.createElement("script");
+    js.type = "text/javascript";
+    js.src = pathToScript;
+    head.appendChild(js);
+}
+
+function appendStyle(pathToStyle) {
+    var head = document.getElementsByTagName("head")[0];
+    var css = document.createElement("script");
+    css.rel = "stylesheet";
+    css.src = pathToStyle;
+    head.appendChild(css);
+}
+
+
 $(document).ready(function(){
-	//Validación Rut
-	$('#rut').Rut({
-		on_success: function(){
-			formato();
-		},
-		on_error: function(){ 
-			alert('Rut incorrecto'),
-			setTimeout(function(){
-			$('#rut').focus();
-			},1);
-		}
-	});
+	// Leer opciones
+	options();
+
+	// Activar animaciones 
+	if (animaciones == 1) {
+		appendStyle('../css/animations.css');
+	}
 	
-	function formato(){
-		var rut = $("#rut").val();
-		rut = rut.replace('.','');
-		rut = rut.replace('.','');
-		rut = rut.replace('-','');
-		$("#rut").val('').val(rut);
+	// Validación Rut
+	if (validar_rut == 1) {
+		appendScript('jquery.Rut.js');
+		
+		// Formatear sin puntos
+		if (limpiar_rut == 1){
+			function formato(){
+				var rut = $("#rut").val();
+				rut = rut.replace('.','');
+				rut = rut.replace('.','');
+				rut = rut.replace('-','');
+				$("#rut").val('').val(rut);
+			};
+		}
 	};
 
-	//Validación Formulario
-	$('#formulario').validator();
-
-});
-
-$(window).load(function(){
-	//Do anything (on load)
-});
-
-$(window).resize(function(){
-	//Do anything (on resize)
-});
-
-$(window).scroll(function () {
-	var navbarHeight = $('nav.navbar').height();
-	if ($(window).scrollTop() > navbarHeight ) {
-		$("nav").addClass("navbar-fixed-top");
-		$('body').css({'padding-top':navbarHeight+'px'});
-	} else {
-		$("nav").removeClass("navbar-fixed-top");
-		$('body').css({'padding-top':0});
+	// Validación Formulario
+	if (validar_formularios == 1 ) {
+		appendScript('validator.js');
 	}
+
+	// Fijar navegación arriba
+	if (fixed_navbar == 1) {
+		$(window).scroll(function () {
+			var navbar = $('nav[data-toggle="fixed-nav"]');
+			var navbarHeight = navbar.height();
+			if ($(window).scrollTop() > navbarHeight ) {
+				navbar.addClass("navbar-fixed-top");
+				$('body').css({'padding-top':navbarHeight+'px'});
+			} else {
+				navbar.removeClass("navbar-fixed-top");
+				$('body').css({'padding-top':0});
+			}
+		});
+	}
+
 });
+
