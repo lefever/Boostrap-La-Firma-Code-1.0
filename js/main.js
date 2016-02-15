@@ -75,16 +75,17 @@ $(document).ready(function(){
 
     // Enviar form ajax
     if (ajax_form == 1 ) {
-        $('form[data-send="ajax"]').on('submit', function(){
-            this = $(this);
+        $('form[data-send="ajax"]').on('submit', function(event){
+        	event.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'inc/registro.php',
-                data: this.serialize(),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
                 success: function(){
                     formSended();
                 }
             });
+            return false;
         })
     }
 

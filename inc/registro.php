@@ -1,5 +1,5 @@
 <?php
-require_once ('inc/coneccion.php');
+require_once ('conexion.php');
 
 $nombre = utf8_decode($_POST["nombre"]);
 $rut = utf8_decode($_POST["rut"]);
@@ -11,7 +11,7 @@ $rut = mysqli_real_escape_string($conexion, $rut);
 $email = mysqli_real_escape_string($conexion, $email);
 $telefono = mysqli_real_escape_string($conexion, $telefono);
 
-$query = "INSERT INTO preuuc2016(
+$query = "INSERT INTO nombre_tabla (
 					 nombre, rut, email, telefono
 				) VALUES (
 					'$nombre', '$rut', '$email', '$telefono'
