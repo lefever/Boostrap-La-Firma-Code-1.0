@@ -22,6 +22,11 @@ function appendStyle(pathToStyle) {
     head.appendChild(css);
 }
 
+// Función success cuando el form es enviado
+function formSended() {
+    $('form[data-send="ajax"]').fadeOut();
+    alert('Formulario Enviado');
+}
 
 $(document).ready(function(){
 	// Leer opciones
@@ -67,6 +72,21 @@ $(document).ready(function(){
 			}
 		});
 	}
+
+    // Enviar form ajax
+    if (ajax_form == 1 ) {
+        $('form[data-send="ajax"]').on('submit', function(){
+            this = $(this);
+            $.ajax({
+                type: 'POST',
+                url: 'inc/registro.php',
+                data: this.serialize(),
+                success: function(){
+                    formSended();
+                }
+            });
+        })
+    }
 
 });
 
