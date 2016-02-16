@@ -32,6 +32,14 @@ $(document).ready(function(){
 	// Leer opciones
 	options();
 
+	
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+		}
+	});
+
 	// Activar animaciones 
 	if (animaciones == 1) {
 		appendStyle('../css/animations.css');
@@ -39,7 +47,20 @@ $(document).ready(function(){
 	
 	// Validación Rut
 	if (validar_rut == 1) {
-		appendScript('jquery.Rut.js');
+
+		$(window).on('load', function(){
+			$('#rut').Rut({
+				on_success: function(){
+					formato();
+				},
+				on_error: function(){ 
+					alert('Rut incorrecto'),
+					setTimeout(function(){
+					$('#rut').focus();
+					},1);
+				}
+			});
+		});
 		
 		// Formatear sin puntos
 		if (limpiar_rut == 1){
@@ -53,10 +74,6 @@ $(document).ready(function(){
 		}
 	};
 
-	// Validación Formulario
-	if (validar_formularios == 1 ) {
-		appendScript('validator.js');
-	}
 
 	// Fijar navegación arriba
 	if (fixed_navbar == 1) {
@@ -88,6 +105,6 @@ $(document).ready(function(){
             return false;
         })
     }
-
+    
 });
 

@@ -148,3 +148,7 @@ a .btn {
     /*transform: translate3d(0, -300px, 0);*/
     opacity: 1;
 }
+
+form[data-send="ajax"] input[type="submit"].disabled {
+    pointer-events: none;
+}

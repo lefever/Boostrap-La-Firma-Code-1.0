@@ -250,17 +250,3 @@ jQuery.Rut = {
           return false;
         }
 };
-
-$(window).on('load', function(){
-	$('#rut').Rut({
-		on_success: function(){
-			formato();
-		},
-		on_error: function(){ 
-			alert('Rut incorrecto'),
-			setTimeout(function(){
-			$('#rut').focus();
-			},1);
-		}
-	});
-});

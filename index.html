@@ -102,14 +102,9 @@
 	  				<td>Activa/desactiva animate.css. <a href="https://daneden.github.io/animate.css/" target="_blank">Ver documentación.</a></td>
 	  			</tr>
 	  			<tr>
-	  				<td>validar_formularios</td>
-	  				<td>1 / 0</td>
-	  				<td>Activa/desactiva la validación de formularios. <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Ver documentación.</a></td>
-	  			</tr>
-	  			<tr>
 	  				<td>validar_rut</td>
 	  				<td>1 / 0</td>
-	  				<td>Activa/desactiva la validación de rut en los formularios. <a href="http://joaquinnunez.cl/jQueryRutPlugin/" target="_blank">Ver documentación.</a></td>
+	  				<td>Activa/desactiva la validación de rut en los formularios para <code><span><</span>input id="rut"></code>. <a href="http://joaquinnunez.cl/jQueryRutPlugin/" target="_blank">Ver documentación.</a></td>
 	  			</tr>
 	  			<tr>
 	  				<td>limpiar_rut</td>
@@ -124,7 +119,7 @@
 	  			<tr>
 	  				<td>fixed_navbar</td>
 	  				<td>1 / 0</td>
-	  				<td>Activa/desactiva la barra de navegación al hacer scroll. Esto se aplica a la barra de navegación <code><span><</span>nav data-toggle="fixed-nav"><span><</span>/nav></td>
+	  				<td>Activa/desactiva la barra de navegación al hacer scroll para <code><span><</span>nav data-toggle="fixed-nav"><span><</span>/nav></td>
 	  			</tr>
 	  		</table>
   		</div>
@@ -332,11 +327,10 @@
             </li>
             <li>
               <h4>/js/jquery.Rut.js <small>v0.5</small></h4>
-              <p>Plugin para validar y formatear RUT. Para validar un rut simplemente añadir a la etiqueta <code><strong>&lt;input&gt;</strong></code> el id 'rut'.</p>
+              <p>Plugin para validar y formatear RUT. Para validar un rut simplemente añadir a la etiqueta <code><strong>&lt;input&gt;</strong></code> el id 'rut'. Se puede modificar el callback en la función <code>formSended()</code> en el archivo <code>/js/main.js</code></p>
               <div class="code">
                 <code><strong>&lt;input id="rut"&gt;&lt;/input&gt;</strong></code>
               </div>
-              <p>Al dar error se creará un alert que mostrará 'Rut incorrecto'. Esto se puede modificar desde el archivo <code><strong>/js/main.js</strong></code></p>
             </li>
           </ul>
         </div>        
@@ -354,7 +348,9 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
     <script src="js/options.js"></script>
+    <script src="js/jquery.Rut.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Analytics -->
